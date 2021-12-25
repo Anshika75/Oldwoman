@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    height: 100vh;
+    width: 100vw;
+    background-color: cadetblue;
+    background: linear-gradient(15deg, #848482 30%, #b0c4de 70%);
+    display: grid;
+    place-items: center;
+}
+.box{
+    height: 320px;
+    width: 320px;
+    background-color: #141f23;
+    position: relative;
+    border-bottom: 10px solid #141f23;
+    box-shadow: 0 0 0.75vmin 0.75vmin #1115;
+}
+.pseudobox{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50px;
+    width: 70px;
+    /* background-color: #0c769c; */
+    border-radius: 0 25px 0 0;
+    overflow: hidden;
+}
+.pseudobox::before{
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    border-radius:  0px 0 100px 100px;
+    height: 100%;
+    width: 100%;
+    background-color: #d8d8d8;
+    transform: rotate(15deg);
+}
+.face{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 140px;
+    height: 130px;
+    transform: translate(-50%, -50%);
+    background-color: #e59b82;
+    border-radius: 25px;
+}
+.face::before{
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    width: 50px;
+    height: 30px;
+    transform: translate(-50%, 40%);
+    background-color: #e59b82;
+    border-radius: 25px;
+}
+.nose{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 55px;
+    height: 15px;
+    transform: translate(-50%, 90%);
+    background-color: #de8466;
+    border-radius: 25px;
+    z-index: 2;
+}
+.nose2{
+    content: "";
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 25px;
+    height: 30px;
+    transform: translate(-50%, -50%);
+    background-color: #de8466;
+}
+.glass{
+    height: 70px;
+    width: 77px;
+    border: 12px solid #765542;
+    border-radius: 20px;
+    background-color: #eaaf9b57;
+}
+.glassl::before{
+    content: "";
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    height: 25px;
+    width: 15px;
+    border-radius: 15px;
+    background-color: #c78d7a;
+}
+.glassl{
+    position: absolute;
+    top: 60%;
+    left: 0%;
+    transform: translate(-15%, -75%);
+}
+.glassr{
+    position: absolute;
+    top: 60%;
+    right: 0%;
+    transform: translate(15%, -75%);
+}
+.glassr::before{
+    content: "";
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    height: 25px;
+    width: 15px;
+    border-radius: 15px;
+    background-color: #c78d7a;
+}
+.hair{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;
+    height: 75px;
+    transform: translate(-50%, -50%);
+    background-color: #d8d8d8;
+    border-radius: 75px;
+}
+.hair::before{
+    content: "";
+    position: absolute;
+    top: -75px;
+    left: 10%;
+    height: 125px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: #d8d8d8;
+}
+.hair::after{
+    content: "";
+    position: absolute;
+    top: -75px;
+    right: 5%;
+    height: 95px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: #d8d8d8;
+}
+.loading{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #141f23;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: load 3s 2s linear both;
+    z-index: 5;
+}
+.loading h2{
+    background: linear-gradient(15deg, #b0c4de 30%, #848482 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+}
+.loading p{
+    background: linear-gradient(15deg, #f2f0f6 30%, #fbc5b7 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* letter-spacing: 2px; */
+    margin-top: 10px;
+    padding: 15px;
+    text-align: center;
+    line-height: 1.5rem;
+}
+@keyframes load{
+    90%{
+        opacity: 0;
+    }
+    100%{
+        z-index: -100;
+    }
+}
+    </style>
+    <main>
+        <div class="box">
+            <div class="hair"></div>
+            <div class="face">
+                <div class="pseudobox"></div>
+                <div class="nose"></div>
+                <div class="nose2"></div>
+                <div class="glass glassl"></div>
+                <div class="glass glassr"></div>
+            </div>
+        </div>
+    </main>
+    <div class="loading">
+        <h2>LOADING...</h2>
+        <p>"As we get older, we understand more and more that it's not about what we look like or what we own, it's all about the person we've become..."</p>
+    </div>
+</body>
+</html>
